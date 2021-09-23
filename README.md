@@ -1,9 +1,9 @@
 # Table of contents
-['Project Title'](#Project_Title)
-['Installation'](#Installation)
-['Usage'](#Usage)
-['Development'](#Development)
-['License'](#License)
+1. ['Project Title'](#Project_Title)
+2. ['Installation'](#Installation)
+3. ['Usage'](#Usage)
+4. ['Development'](#Development)
+5. ['License'](#License)
 
 
 
