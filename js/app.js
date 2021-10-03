@@ -53,13 +53,13 @@ const initiate = () => {
         newItemNav.setAttribute("id", format(item.innerHTML)+"-nav");
     });
     navList.appendChild(newNode)
-    collapseSections();
 }
 
 
 // Add class 'active' to section when near top of viewport
 // Scroll to anchor ID using scrollTO event
 // check which element are shown in screen
+
 const checkActive = () =>{
     navBar.style.display="block";
     if (scrollFlag !== null) {
@@ -67,20 +67,21 @@ const checkActive = () =>{
         for (let i = 0 ; i < sectionIds.length; i++){
             let sectionItem = document.getElementById(sectionIds[i]);
             sectionItem.setAttribute("class", '');
-            sectionItem.addEventListener()
             showInViewport(sectionItem , sectionIds[i] );
         }
     }
     scrollFlag = setTimeout(() => {
         navBar.style.display="none";
-    }, 500);
+    }, 1500);
 }
 
 
 // Modify active section and nav bar after checking Viewport.
+
 let showInViewport = (tagElement, navElementClass) =>{
     const rect = tagElement.getBoundingClientRect();
     const navElement = document.querySelector(`#${navElementClass}-nav`);
+    
     if  (
         rect.top >= -14 &&
         rect.top <= 800
