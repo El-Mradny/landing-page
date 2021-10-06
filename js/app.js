@@ -48,7 +48,8 @@ const initiate = () => {
     allSections.forEach((item)=> {
         sectionIds.push(format(item.innerHTML));
         let newItemNav = document.createElement("li");
-        newItemNav.innerHTML = "<a class='menu__link'  href= '#"+format(item.innerHTML)+ "'>"+item.innerHTML+"</a>";
+        newItemNav.innerHTML = "<a class='menu__link'>"+item.innerHTML+"</a>";
+        newItemNav.addEventListener('click', () => showSection(format(item.innerHTML)));
         newNode.appendChild(newItemNav);
         newItemNav.setAttribute("id", format(item.innerHTML)+"-nav");
     });
@@ -84,7 +85,7 @@ let showInViewport = (tagElement, navElementClass) =>{
     
     if  (
         rect.top >= -14 &&
-        rect.top <= 800
+        rect.top <= 750
     ){
         tagElement.setAttribute("class", "active");
         tagElement.style.scrollBehavior= 'smooth';
@@ -96,16 +97,19 @@ let showInViewport = (tagElement, navElementClass) =>{
 }
 
 
-
 /**
  * End Main Functions
  * Begin Events
  * 
 */
 
-// Build menu 
+// Build menu
+
 
 // Scroll to section on link click
+const showSection = (sectionName) =>{
+    document.getElementById(sectionName).scrollIntoView(true);
+}
 
 // Set sections as active
 
